@@ -45,10 +45,9 @@ app.post('/api/notes', (request, response) => {
 
 app.delete('/api/notes/:id', (request, response) => {
     Note.findByIdAndDelete(request.params.id)
-
     response.status(204).end()
 })
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3001
 app.listen(PORT)
 console.log(`Server running on port ${PORT}`)
